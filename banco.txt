@@ -1,0 +1,36 @@
+CREATE USER 'user'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON * . * TO 'user'@'localhost';
+
+create schema estoque;
+use estoque;
+
+create table Produto(
+prod_id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+prod_nome VARCHAR(255),
+prod_descricao VARCHAR(255),
+prod_preco VARCHAR(255)
+);
+
+create table Cliente(
+cli_id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+cli_nome VARCHAR(255),
+cli_email VARCHAR(255),
+cli_telefone VARCHAR(255)
+);
+
+create table Pedido(
+pedido_id BIGINT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+produto_id BIGINT NOT NULL ,
+cliente_id BIGINT NOT NULL
+
+);
+
+INSERT INTO produto(produto_nome, prod_descricao, prod_preco)
+VALUES('PENDRIVE', '8GB', '20,00');
+
+INSERT INTO cliente(cli_nome, cli_email, cli_telefone)
+VALUES('Jacqueline', 'Jacqueline@email', '1234-5678');
+
+
+
+
